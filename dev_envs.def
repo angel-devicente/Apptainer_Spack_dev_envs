@@ -1,0 +1,66 @@
+bootstrap: docker
+from: ubuntu:22.04
+
+%setup
+     
+%files
+
+%runscript
+
+%startscript
+
+%post
+     :
+     : =========================== :
+     : CREATING dev_envs CONTAINER :
+     : =========================== :
+
+     apt-get update
+
+     # locales
+     apt-get install -y locales
+     localedef -i en_GB -c -f UTF-8 -A /usr/share/locale/locale.alias en_GB.UTF-8
+     localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8	
+     localedef -i es_ES -c -f UTF-8 -A /usr/share/locale/locale.alias es_ES.UTF-8
+     
+     # Dependencies
+     apt-get -y install build-essential
+     apt-get -y install git
+     apt-get -y install curl
+     apt-get -y install file
+     apt-get -y install cmake
+     apt-get -y install wget 
+     apt-get -y install python3 python3-distutils python3-dev
+     apt-get -y install golang
+
+%apprun gcc_10_3_0
+     echo "Environment 10.3.0"
+     . $SPACK_ROOT/share/spack/setup-env.sh
+     spack load gcc@10.3.0
+     spacktivate gcc_10_3_0
+     bash --rcfile .rcapp
+
+%apprun gcc_9_4_0
+     echo "Environment 9.4.0"
+     . $SPACK_ROOT/share/spack/setup-env.sh
+     spack load gcc@9.4.0
+     spacktivate gcc_9_4_0
+     bash --rcfile .rcapp
+
+%environment
+     export LANG=en_GB.utf8
+     export SPACK_ROOT=/spack/spack-0.17.3
+     export SPACK_USER_CONFIG_PATH=/spack/.spack
+     export SPACK_USER_CACHE_PATH=/spack/.spack-cache
+     export SPACK_PYTHON=/usr/bin/python3
+
+%help
+     Development environments container.
+     apptainer run --app gcc_10_3_0 --overlay spack.img dev_envs.sif
+     apptainer run --app gcc_9_4_0 --overlay spack.img dev_envs.sif
+
+%labels
+     Author Angel de Vicente (angel.de.vicente@iac.es)
+     Version v1.0
+     Info Ubuntu 22.04, with Spack and development environments
+     Date 2022-09-26

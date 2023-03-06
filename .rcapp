@@ -1,0 +1,6 @@
+alias ls='ls --color=auto'
+PS1='[\u@Apptainer \W]\$ '
+
+# To avoid having huge paths in Bash (if PS1 uses \w, with \W only the base directory is shown
+export PROMPT_DIRTRIM=2
+
