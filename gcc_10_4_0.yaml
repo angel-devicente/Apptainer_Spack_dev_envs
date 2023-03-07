@@ -1,0 +1,9 @@
+spack:
+  specs: [openmpi%gcc@10.4.0, hdf5+fortran+hl+szip, cmake, graphviz, doxygen+graphviz, gdb]
+  concretizer:
+    unify: true
+  view: true
+  packages:
+    all:
+      compiler: [gcc@10.4.0]
+        
