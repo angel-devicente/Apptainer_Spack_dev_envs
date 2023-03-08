@@ -37,8 +37,7 @@ section in the .def file for instructions on how to use it).
 
 * Running
 
-Just run envs/gcc_9_5_0.sh or envs/gcc_10_4_0.sh
-
-We end up in one of these environments, and we can actually add other software
-if we want, since the overlay is writable by angelv.
+Just run =envs/gcc_9_5_0.sh= or =envs/gcc_10_4_0.sh= and we end up in one of
+these environments, where we can actually add other software if we want, since
+the overlay is writable by my regular user.
 

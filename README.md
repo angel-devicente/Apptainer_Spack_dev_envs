@@ -1,8 +1,8 @@
 
 # Table of Contents
 
-1.  [Build](#org874a16d)
-2.  [Running](#orgd1bd20d)
+1.  [Build](#orge6914a7)
+2.  [Running](#org4cd8365)
 
 This is the most versatile way I found to have a system that doesn't move with
 the changes to my ArchLinux workstation (compiler, glibc, etc.), while at the
@@ -10,7 +10,7 @@ same time being able to create new environments and to install new packages with
 Spack.
 
 
-<a id="org874a16d"></a>
+<a id="orge6914a7"></a>
 
 # Build
 
@@ -42,12 +42,11 @@ section in the .def file for instructions on how to use it).
         just -j 1
 
 
-<a id="orgd1bd20d"></a>
+<a id="org4cd8365"></a>
 
 # Running
 
-Just run envs/gcc<sub>9</sub><sub>5</sub><sub>0.sh</sub> or envs/gcc<sub>10</sub><sub>4</sub><sub>0.sh</sub>
-
-We end up in one of these environments, and we can actually add other software
-if we want, since the overlay is writable by angelv.
+Just run `envs/gcc_9_5_0.sh` or `envs/gcc_10_4_0.sh` and we end up in one of
+these environments, where we can actually add other software if we want, since
+the overlay is writable by my regular user.
 
