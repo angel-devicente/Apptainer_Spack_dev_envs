@@ -1,9 +1,9 @@
 This is the most versatile way I found to have a system that doesn't move with
-the changes to sieladon (compiler, glibc, etc.), while at the same time being
-able to create new environments and to install new packages with Spack.
+the changes to my ArchLinux workstation (compiler, glibc, etc.), while at the
+same time being able to create new environments and to install new packages with
+Spack.
 
-Build
-=====
+* Build
 
 #+begin_example
 sudo -E apptainer build dev_envs.sif dev_envs.def
@@ -26,7 +26,7 @@ Apptainer>  . inside_appt.sh
 (this installs the spack environments, based on the .yaml files. See the %help
 section in the .def file for instructions on how to use it).
 
-+ Built on [2023-03-07 Tue]:
++ Built on =[2023-03-07 Tue]=:
   + Ubuntu 22.04
   + Apptainer 1.1.5
   + Spack 0.19.1
@@ -35,8 +35,7 @@ section in the .def file for instructions on how to use it).
     installation [Bus error (core dumped)], but it seems OK if I install it with
     just -j 1 
 
-Running
-=======
+* Running
 
 Just run envs/gcc_9_5_0.sh or envs/gcc_10_4_0.sh
 
