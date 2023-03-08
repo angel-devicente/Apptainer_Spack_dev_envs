@@ -1,8 +1,8 @@
 
 # Table of Contents
 
-1.  [Build](#orge6914a7)
-2.  [Running](#org4cd8365)
+1.  [Build](#org98c1c0d)
+2.  [Running](#org23f2fa6)
 
 This is the most versatile way I found to have a system that doesn't move with
 the changes to my ArchLinux workstation (compiler, glibc, etc.), while at the
@@ -10,7 +10,7 @@ same time being able to create new environments and to install new packages with
 Spack.
 
 
-<a id="orge6914a7"></a>
+<a id="org98c1c0d"></a>
 
 # Build
 
@@ -21,10 +21,11 @@ overlay, we can just modify it quickly and add references to those new environme
 
     ./create_spack_overlay.sh
 
-(this just creates a persistent overlay, tied to /spack, writable by `angelv`,
-so that I can have a complete Spack installation. The variables SPACK<sub>ROOT</sub>,
-SPACK<sub>USER</sub><sub>CONFIG</sub><sub>PATH</sub>, SPACK<sub>USER</sub><sub>CACHE</sub><sub>PATH</sub> (see .def) guarantee that this
-Spack installation is independent of my host Spack installation)      
+(this just creates a persistent overlay, tied to `/spack`, writable as a regular
+user, so that I can have a complete Spack installation. The variables
+`SPACK_ROOT`, `SPACK_USER_CONFIG_PATH`, `SPACK_USER_CACHE_PATH` (see `.def`
+file) guarantee that this Spack installation is independent of my host Spack
+installation).
 
     apptainer shell --overlay spack.img dev_envs.sif
     Apptainer>  . inside_appt.sh
@@ -42,7 +43,7 @@ section in the .def file for instructions on how to use it).
         just -j 1
 
 
-<a id="org4cd8365"></a>
+<a id="org23f2fa6"></a>
 
 # Running
 

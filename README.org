@@ -14,10 +14,11 @@ overlay, we can just modify it quickly and add references to those new environme
 #+begin_example
 ./create_spack_overlay.sh
 #+end_example
-(this just creates a persistent overlay, tied to /spack, writable by =angelv=,
-so that I can have a complete Spack installation. The variables SPACK_ROOT,
-SPACK_USER_CONFIG_PATH, SPACK_USER_CACHE_PATH (see .def) guarantee that this
-Spack installation is independent of my host Spack installation)      
+(this just creates a persistent overlay, tied to =/spack=, writable as a regular
+user, so that I can have a complete Spack installation. The variables
+=SPACK_ROOT=, =SPACK_USER_CONFIG_PATH=, =SPACK_USER_CACHE_PATH= (see =.def=
+file) guarantee that this Spack installation is independent of my host Spack
+installation).
 
 #+begin_example
 apptainer shell --overlay spack.img dev_envs.sif
