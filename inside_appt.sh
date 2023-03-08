@@ -34,13 +34,14 @@ spack env create gcc_9_5_0 /spack/gcc_9_5_0.yaml
 
 spacktivate gcc_10_4_0
 spack concretize -f
+spack install -j 1 python
 spack install -j 40
 despacktivate
 
 spacktivate gcc_9_5_0
 spack concretize -f
+spack install -j 1 python
 spack install -j 40
 despacktivate
-
 
 spack clean --all

@@ -32,15 +32,14 @@ section in the .def file for instructions on how to use it).
   + Spack 0.19.1
   + gcc: 10.4.0 ; 9.5.0
   + Notes, when building there are errors for both environments about python
-    3.10.8, so I will try with version 3.8.15
+    installation [Bus error (core dumped)], but it seems OK if I install it with
+    just -j 1 
 
 Running
 =======
 
-On 14th October'22 I tried with Apptainer 1.1.0 in sieladon. I have to add the "ro"
-option to the .sh files, or otherwise I will get an error that /var/tmp cannot
-be mounted. Now I get a warning, but it looks like, as far as I don't want to
-modify the overlay, all is working OK.
+Just run envs/gcc_9_5_0.sh or envs/gcc_10_4_0.sh
 
-Later on I should try to get rid of this ":ro" again and see if things have
-improved.
+We end up in one of these environments, and we can actually add other software
+if we want, since the overlay is writable by angelv.
+
