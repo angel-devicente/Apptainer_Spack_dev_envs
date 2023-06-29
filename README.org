@@ -43,7 +43,7 @@ these environments, where we can actually add other software if we want, since
 the overlay is writable by my regular user.
 
 
-* NOTE 
+* NOTE                                                             :noexport:
 
 On [2023-06-29 Thu], moving to siehp I will try to no use these environments,
 which were always a bit messy, running inside the container, not having access

@@ -1,8 +1,8 @@
 
 # Table of Contents
 
-1.  [Build](#org98c1c0d)
-2.  [Running](#org23f2fa6)
+1.  [Build](#orge6239c0)
+2.  [Running](#orgb641a0b)
 
 This is the most versatile way I found to have a system that doesn't move with
 the changes to my ArchLinux workstation (compiler, glibc, etc.), while at the
@@ -10,7 +10,7 @@ same time being able to create new environments and to install new packages with
 Spack.
 
 
-<a id="org98c1c0d"></a>
+<a id="orge6239c0"></a>
 
 # Build
 
@@ -43,7 +43,7 @@ section in the .def file for instructions on how to use it).
         just -j 1
 
 
-<a id="org23f2fa6"></a>
+<a id="orgb641a0b"></a>
 
 # Running
 
